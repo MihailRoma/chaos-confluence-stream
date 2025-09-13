@@ -1,96 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Terminal Design System for Project Oblivia Backrooms */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Terminal Colors */
+    --terminal-bg: 0 0% 5%;
+    --terminal-surface: 0 0% 8%;
+    --terminal-border: 120 100% 25%;
+    
+    /* Agent Colors */
+    --grok-primary: 45 100% 65%;
+    --grok-dim: 45 80% 45%;
+    --chatgpt-primary: 195 100% 65%;
+    --chatgpt-dim: 195 80% 45%;
+    --claude-primary: 285 100% 75%;
+    --claude-dim: 285 80% 55%;
+    --perplexity-primary: 15 100% 70%;
+    --perplexity-dim: 15 80% 50%;
+    
+    /* System Log Colors */
+    --log-system: 180 100% 50%;
+    --log-info: 120 100% 50%;
+    --log-warning: 45 100% 60%;
+    --log-error: 0 100% 60%;
+    --log-debug: 270 100% 70%;
+    --log-text: 120 30% 85%;
+    --log-timestamp: 120 20% 60%;
+    --log-tag: 120 40% 70%;
+    
+    /* Terminal Effects */
+    --glow-green: 120 100% 50%;
+    --cursor-blink: 120 100% 60%;
+    --terminal-shadow: 0 0 20px hsl(120 100% 50% / 0.3);
+    
+    /* Animations */
+    --flicker-duration: 0.1s;
+    --scroll-speed: 0.3s;
+    
+    /* Legacy tokens for compatibility */
+    --background: var(--terminal-bg);
+    --foreground: var(--log-text);
+    --primary: var(--glow-green);
+    --primary-foreground: var(--terminal-bg);
+    --secondary: var(--terminal-surface);
+    --secondary-foreground: var(--log-text);
+    --muted: var(--terminal-surface);
+    --muted-foreground: var(--log-timestamp);
+    --accent: var(--glow-green);
+    --accent-foreground: var(--terminal-bg);
+    --destructive: var(--log-error);
+    --destructive-foreground: var(--terminal-bg);
+    --border: var(--terminal-border);
+    --input: var(--terminal-surface);
+    --ring: var(--glow-green);
+    --card: var(--terminal-surface);
+    --card-foreground: var(--log-text);
+    --popover: var(--terminal-surface);
+    --popover-foreground: var(--log-text);
+    --radius: 0.25rem;
   }
 }
 
@@ -100,6 +71,90 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-terminal-bg text-log-text font-mono;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+    overflow: hidden;
+  }
+
+  /* Terminal scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--terminal-border)) hsl(var(--terminal-bg));
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--terminal-bg));
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--terminal-border));
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--glow-green));
+  }
+
+  /* Terminal glow effects */
+  @keyframes terminal-glow {
+    0%, 100% { 
+      box-shadow: 0 0 5px hsl(var(--glow-green) / 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 20px hsl(var(--glow-green) / 0.5);
+    }
+  }
+
+  .terminal-glow {
+    animation: terminal-glow 2s ease-in-out infinite;
+  }
+
+  /* Cursor blink effect */
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .cursor-blink {
+    animation: cursor-blink 1s infinite;
+  }
+
+  /* Matrix-style text cascade effect */
+  @keyframes text-cascade {
+    0% { 
+      opacity: 0; 
+      transform: translateY(-10px);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  .text-cascade {
+    animation: text-cascade 0.3s ease-out;
+  }
+
+  /* Glitch effect */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    10% { transform: translate(-2px, 2px); }
+    20% { transform: translate(2px, -2px); }
+    30% { transform: translate(-2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, 2px); }
+    60% { transform: translate(2px, -2px); }
+    70% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    90% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0); }
+  }
+
+  .glitch-effect {
+    animation: glitch 0.5s infinite;
   }
 }

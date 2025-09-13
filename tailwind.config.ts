@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        mono: ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,15 +50,37 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Terminal specific colors
+        terminal: {
+          bg: "hsl(var(--terminal-bg))",
+          surface: "hsl(var(--terminal-surface))",
+          border: "hsl(var(--terminal-border))",
+        },
+        grok: {
+          DEFAULT: "hsl(var(--grok-primary))",
+          dim: "hsl(var(--grok-dim))",
+        },
+        chatgpt: {
+          DEFAULT: "hsl(var(--chatgpt-primary))",
+          dim: "hsl(var(--chatgpt-dim))",
+        },
+        claude: {
+          DEFAULT: "hsl(var(--claude-primary))",
+          dim: "hsl(var(--claude-dim))",
+        },
+        perplexity: {
+          DEFAULT: "hsl(var(--perplexity-primary))",
+          dim: "hsl(var(--perplexity-dim))",
+        },
+        log: {
+          system: "hsl(var(--log-system))",
+          info: "hsl(var(--log-info))",
+          warning: "hsl(var(--log-warning))",
+          error: "hsl(var(--log-error))",
+          debug: "hsl(var(--log-debug))",
+          text: "hsl(var(--log-text))",
+          timestamp: "hsl(var(--log-timestamp))",
+          tag: "hsl(var(--log-tag))",
         },
       },
       borderRadius: {
